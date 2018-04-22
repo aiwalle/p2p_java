@@ -1,0 +1,4 @@
+com/liang/p2p/base/util/JSONResult.class
+com/liang/p2p/base/domain/BaseDomain.class
+com/liang/p2p/base/domain/Logininfo.class
+com/liang/p2p/base/mapper/LogininfoMapper.class
