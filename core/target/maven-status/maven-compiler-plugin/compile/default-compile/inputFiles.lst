@@ -1,7 +1,7 @@
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/mapper/LogininfoMapper.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/service/impl/LogininfoServiceImpl.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/service/ILogininfoService.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/domain/Logininfo.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/util/JSONResult.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/util/MD5.java
-/Users/liang/Documents/Project/P2P-IDEA/core/src/main/java/com/liang/p2p/base/domain/BaseDomain.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/Logininfo.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/MD5.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/JSONResult.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/ILogininfoService.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/LogininfoMapper.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/BaseDomain.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/impl/LogininfoServiceImpl.java

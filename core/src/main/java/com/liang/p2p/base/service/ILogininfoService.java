@@ -13,4 +13,19 @@ public interface ILogininfoService {
      * @param password
      */
     void register(String username, String password);
+
+    /**
+     * 检查用户名是否存在，存在true，不存在false
+     * @param username
+     * @return
+     */
+    boolean checkUsername(String username);
+
+
+    /**
+     * 用户登录
+     * @param username
+     * @param password
+     */
+    void login(String username, String password);
 }

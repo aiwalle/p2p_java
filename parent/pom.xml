@@ -37,6 +37,8 @@
         </dependency>
 
 
+
+
         <!--mybatis-->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -121,6 +123,13 @@
             <version>${org.springframework.version}</version>
         </dependency>
 
+
+        <!-- cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.1</version>
+        </dependency>
 
         <!-- aspectj -->
         <dependency>

@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<!--一些mybatis的基础配置，关于懒加载什么的-->
-	<!--<settings>-->
-		<!--<setting name="lazyLoadingEnabled" value="false"/>-->
-		<!--<setting name="aggressiveLazyLoading" value="false"/>-->
-		<!--<setting name="lazyLoadTriggerMethods" value="clone"/>-->
-	<!--</settings>-->
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<setting name="lazyLoadTriggerMethods" value="clone"/>
+	</settings>
 </configuration>

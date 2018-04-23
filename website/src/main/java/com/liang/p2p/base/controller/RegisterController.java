@@ -26,9 +26,27 @@ public class RegisterController {
             json.setSuccess(false);
             json.setMsg(re.getMessage());
         }
-
         return json;
     }
 
+
+    @RequestMapping("/checkUsername")
+    @ResponseBody
+    public boolean checkUsername(String username) {
+        return !logininfoService.checkUsername(username);
+    }
+
+    @RequestMapping("/login")
+    @ResponseBody
+    public JSONResult login(String username, String password) {
+        JSONResult json = new JSONResult();
+        try {
+            logininfoService.login(username, password);
+        } catch (RuntimeException re) {
+            json.setSuccess(false);
+            json.setMsg(re.getMessage());
+        }
+        return json;
+    }
 
 }

@@ -28,17 +28,13 @@
 <script type="text/javascript">
 	$(function(){
 		$("#loginForm").validate({
-			//自定义错误样式
 			errorClass:"text-danger",
-			//未通过验证,进行高亮处理或其他处理；
 			highlight:function(input){
 				$(input).closest(".form-group").addClass("has-error");
 			},
-			//通过验证,清除高亮效果或其他处理；
 			unhighlight:function(input){
 				$(input).closest(".form-group").removeClass("has-error");
 			},
-			//验证成功后，提交操作；
 			submitHandler:function(form){
 				$(form).ajaxSubmit(function(data){
 					if(data.success){
@@ -100,7 +96,7 @@
 			</div>
 			<div class="form-gorup">
 				<div class="col-sm-offset-3">
-					<button class="btn btn-success" style="width: 100px;">
+					<button type="submit" class="btn btn-success" style="width: 100px;">
 						登录
 					</button>
 					&emsp;&emsp;

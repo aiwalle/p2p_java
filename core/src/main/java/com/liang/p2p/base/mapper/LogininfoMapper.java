@@ -1,6 +1,8 @@
 package com.liang.p2p.base.mapper;
 
 import com.liang.p2p.base.domain.Logininfo;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface LogininfoMapper {
@@ -20,4 +22,12 @@ public interface LogininfoMapper {
      * @return
      */
     int getCountByUsername(String username);
+
+    /**
+     * 用户登录
+     * @param username
+     * @param password
+     * @return
+     */
+    Logininfo login(@Param("username") String username, @Param("password") String password);
 }

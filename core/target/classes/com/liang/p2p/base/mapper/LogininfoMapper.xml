@@ -35,8 +35,13 @@
     from logininfo
   </select>
 
-  <select id="getCountByUsername" resultMap="int">
-    select count(id)
-    from logininfo where username = #{username}
+  <select id="getCountByUsername" resultType="int">
+    SELECT count(id) FROM logininfo WHERE username = #{username}
+  </select>
+
+  <select id="login" resultMap="BaseResultMap">
+    SELECT <include refid="base_column"/>
+    FROM logininfo
+    WHERE username = #{username} AND password = #{password}
   </select>
 </mapper>
