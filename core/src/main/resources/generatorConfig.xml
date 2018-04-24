@@ -73,12 +73,35 @@
 			<!--<generatedKey column="id" sqlStatement="JDBC"/>`-->
 		<!--</table>-->
 
-		<table tableName="logininfo" domainObjectName="Logininfo">
-			<!-- 参考 javaModelGenerator 的 constructorBased属性 -->
-			<property name="constructorBased" value="false" />
-			<generatedKey column="id" sqlStatement="JDBC" />
-		</table>
+		<!--<table tableName="systemDictionary" delimitIdentifiers="true">-->
+			<!--&lt;!&ndash; 参考 javaModelGenerator 的 constructorBased属性 &ndash;&gt;-->
+			<!--<property name="constructorBased" value="false" />-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
 
+		<!--<table tableName="systemDictionaryItem" delimitIdentifiers="true">-->
+			<!--&lt;!&ndash; 参考 javaModelGenerator 的 constructorBased属性 &ndash;&gt;-->
+			<!--<property name="constructorBased" value="false" />-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+
+		<!--<table tableName="account" delimitIdentifiers="true">-->
+			<!--&lt;!&ndash; 参考 javaModelGenerator 的 constructorBased属性 &ndash;&gt;-->
+			<!--<property name="constructorBased" value="false" />-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+
+		<!--<table tableName="userinfo" delimitIdentifiers="true">-->
+			<!--&lt;!&ndash; 参考 javaModelGenerator 的 constructorBased属性 &ndash;&gt;-->
+			<!--<property name="constructorBased" value="false" />-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+
+		<table tableName="iplog" delimitIdentifiers="true">
+		<!-- 参考 javaModelGenerator 的 constructorBased属性 -->
+		<property name="constructorBased" value="false" />
+		<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
 
 	</context>
 

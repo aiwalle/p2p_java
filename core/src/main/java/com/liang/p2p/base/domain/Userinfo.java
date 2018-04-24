@@ -2,7 +2,6 @@ package com.liang.p2p.base.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import sun.jvm.hotspot.memory.SystemDictionary;
 
 /**
  * 用户相关信息
@@ -11,7 +10,7 @@ import sun.jvm.hotspot.memory.SystemDictionary;
 @Getter@Setter
 public class Userinfo extends BaseDomain {
     private int version;    // 版本号
-    private long bitState;  // 用户状态码
+    private long bitState = 0;  // 用户状态码
     private String realName;
     private String idNumber;
     private String phoneNumber;
