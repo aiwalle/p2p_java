@@ -29,6 +29,12 @@ public interface ILogininfoService {
      * @param username
      * @param password
      * @param remoteAddr
+     * @param userType
      */
-    Logininfo login(String username, String password, String remoteAddr);
+    Logininfo login(String username, String password, String remoteAddr, int userType);
+
+    /**
+     * 初始化第一个管理员
+     */
+    void initAdmin();
 }

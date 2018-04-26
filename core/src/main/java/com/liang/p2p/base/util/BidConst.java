@@ -32,4 +32,15 @@ public class BidConst {
      */
     public static final BigDecimal INIT_BORROW_LIMIT = new BigDecimal("5000.0000");
 
+    /**
+     * 默认管理员的用户名和密码
+     */
+    public static final String DEFAULT_ADMIN_NAME = "admin";
+    public static final String DEFAULT_ADMIN_PASSWORD = "1111";
+
+
+    /**
+     * 手机验证码的有效期
+     */
+    public static final int VERIFYCODE_VALIDATE_SECOND = 300;
 }

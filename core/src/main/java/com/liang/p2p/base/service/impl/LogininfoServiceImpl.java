@@ -9,11 +9,13 @@ import com.liang.p2p.base.mapper.LogininfoMapper;
 import com.liang.p2p.base.service.IAccountService;
 import com.liang.p2p.base.service.ILogininfoService;
 import com.liang.p2p.base.service.IUserinfoService;
+import com.liang.p2p.base.util.BidConst;
 import com.liang.p2p.base.util.MD5;
 import com.liang.p2p.base.util.UserContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.management.LockInfo;
 import java.util.Date;
 
 /**
@@ -44,6 +46,7 @@ public class LogininfoServiceImpl implements ILogininfoService {
             logininfo.setUsername(username);
             logininfo.setPassword(MD5.encode(password));
             logininfo.setState(Logininfo.STATE_NORMAL);
+            logininfo.setUserType(Logininfo.USER_CLIENT);
             logininfoMapper.insert(logininfo);
 
             // 初始化账户信息和userinfo
@@ -67,12 +70,13 @@ public class LogininfoServiceImpl implements ILogininfoService {
         return  count > 0;
     }
 
-    public Logininfo login(String username, String password, String remoteAddr) {
-        Logininfo logininfo = logininfoMapper.login(username, MD5.encode(password));
+    public Logininfo login(String username, String password, String remoteAddr, int userType) {
+        Logininfo logininfo = logininfoMapper.login(username, MD5.encode(password), userType);
         Iplog iplog = new Iplog();
         iplog.setIp(remoteAddr);
         iplog.setLoginTime(new Date());
         iplog.setUserName(username);
+        iplog.setUserType(userType);
 
         if (logininfo != null) {
             // 将信息放到UserContext中
@@ -83,6 +87,20 @@ public class LogininfoServiceImpl implements ILogininfoService {
         }
         iplogMapper.insert(iplog);
         return logininfo;
+
+    }
+
+    public void initAdmin() {
+        int count = logininfoMapper.countByUserType(Logininfo.USER_MANAGER);
+
+        if (count == 0) {
+            Logininfo admin = new Logininfo();
+            admin.setUsername(BidConst.DEFAULT_ADMIN_NAME);
+            admin.setPassword(MD5.encode(BidConst.DEFAULT_ADMIN_PASSWORD));
+            admin.setState(Logininfo.STATE_NORMAL);
+            admin.setUserType(Logininfo.USER_MANAGER);
+            logininfoMapper.insert(admin);
+        }
 
     }
 }

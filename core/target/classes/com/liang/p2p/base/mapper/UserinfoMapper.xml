@@ -41,7 +41,7 @@
       kidCount_id = #{kidCount.id,jdbcType=BIGINT},
       educationBackground_id = #{educationBackground.id,jdbcType=BIGINT},
       houseCondition_id = #{houseCondition.id,jdbcType=BIGINT}
-    where id = #{id,jdbcType=BIGINT} and verion = #{version}
+    where id = #{id,jdbcType=BIGINT} and version = #{version}
   </update>
 
   <sql id="base_column">

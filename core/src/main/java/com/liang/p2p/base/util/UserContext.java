@@ -1,6 +1,7 @@
 package com.liang.p2p.base.util;
 
 import com.liang.p2p.base.domain.Logininfo;
+import com.liang.p2p.base.vo.VerifyCodeVO;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 public class UserContext {
     public static final String USER_IN_SESSION = "logininfo";
 
+    public static final String VERIFYCODE_IN_SESSION = "verifycode_in_session";
 
     /**
      * 这是一个反向的获取request的方法，请查看RequestContextHolder的requestInitialized的打包过程
@@ -33,5 +35,15 @@ public class UserContext {
         // 得到session，获取logininfo
         return (Logininfo) getSession().getAttribute(USER_IN_SESSION);
     }
+
+    public static void putVerifyCode(VerifyCodeVO vo) {
+        getSession().setAttribute(VERIFYCODE_IN_SESSION, vo);
+    }
+
+    public static VerifyCodeVO getCurrentVerifyCode() {
+        return (VerifyCodeVO) getSession().getAttribute(VERIFYCODE_IN_SESSION);
+    }
+
+
 
 }

@@ -44,7 +44,7 @@ public class RegisterController {
     @ResponseBody
     public JSONResult login(String username, String password, HttpServletRequest request) {
         JSONResult json = new JSONResult();
-        Logininfo logininfo = logininfoService.login(username, password, request.getRemoteAddr());
+        Logininfo logininfo = logininfoService.login(username, password, request.getRemoteAddr(), Logininfo.USER_CLIENT);
         if (logininfo == null) {
             json.setSuccess(false);
             json.setMsg("用户名密码错误");

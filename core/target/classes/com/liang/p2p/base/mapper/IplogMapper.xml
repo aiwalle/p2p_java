@@ -6,19 +6,56 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="ip" property="ip" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="TINYINT" />
+    <result column="userType" property="userType" jdbcType="TINYINT" />
     <result column="userName" property="userName" jdbcType="VARCHAR" />
     <result column="loginTime" property="loginTime" jdbcType="TIMESTAMP" />
   </resultMap>
 
   <insert id="insert" useGeneratedKeys="true" keyProperty="id" >
-    insert into `iplog` (ip, state, userName, 
+    insert into `iplog` (ip, state, userType, userName,
       loginTime)
-    values (#{ip,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, #{userName,jdbcType=VARCHAR},
+    values (#{ip,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, #{userType,jdbcType=TINYINT}, #{userName,jdbcType=VARCHAR},
       #{loginTime,jdbcType=TIMESTAMP})
   </insert>
 
-  <select id="selectAll" resultMap="BaseResultMap" >
-    select id, ip, state, userName, loginTime
-    from `iplog`
+  <sql id="base_column">
+    id, ip, state, userType, userName, loginTime
+  </sql>
+  
+  <sql id="base_where">
+    <where>
+      <if test="beginDate!=null">
+        AND loginTime &gt;= #{beginDate}
+      </if>
+      <if test="endDate!=null">
+        AND loginTime &lt;= #{endDate}
+      </if>
+      <if test="userType>-1">
+        AND userType = #{userType}
+      </if>
+      <if test="state>-1">
+        AND state = #{state}
+      </if>
+      <if test="username!=null">
+        AND username = #{username}
+      </if>
+    </where>
+  </sql>
+
+
+  <select id="queryForCount" resultType="int">
+    SELECT count(id)
+    FROM iplog
+    <include refid="base_where"/>
   </select>
+
+  <select id="query" resultMap="BaseResultMap">
+    SELECT <include refid="base_column"/>
+    FROM iplog
+    <include refid="base_where"/>
+    ORDER BY loginTime DESC
+    LIMIT #{start},#{pageSize}
+  </select>
+
+
 </mapper>
