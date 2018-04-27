@@ -3,6 +3,7 @@
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/ILogininfoService.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/DateUtil.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/UserinfoMapper.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/MailVerify.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/SystemDictionaryItemMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IIplogService.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IVerifyCodeService.java
@@ -24,6 +25,7 @@
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/Account.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/BitStatesUtils.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IUserinfoService.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/MailVerifyMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IAccountService.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/BidConst.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/SystemDictionary.java

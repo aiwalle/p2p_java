@@ -14,6 +14,7 @@ com/liang/p2p/base/service/impl/IplogServiceImpl.class
 com/liang/p2p/base/service/IUserinfoService.class
 com/liang/p2p/base/mapper/IplogMapper.class
 com/liang/p2p/base/service/IAccountService.class
+com/liang/p2p/base/domain/MailVerify.class
 com/liang/p2p/base/util/JSONResult.class
 com/liang/p2p/base/util/BidConst.class
 com/liang/p2p/base/service/IVerifyCodeService.class
@@ -31,3 +32,4 @@ com/liang/p2p/base/service/ILogininfoService.class
 com/liang/p2p/base/mapper/LogininfoMapper.class
 com/liang/p2p/base/domain/Iplog.class
 com/liang/p2p/base/util/MD5.class
+com/liang/p2p/base/mapper/MailVerifyMapper.class

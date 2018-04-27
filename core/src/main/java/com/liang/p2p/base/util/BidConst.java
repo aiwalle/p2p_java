@@ -43,4 +43,9 @@ public class BidConst {
      * 手机验证码的有效期
      */
     public static final int VERIFYCODE_VALIDATE_SECOND = 300;
+
+    /**
+     * 验证邮箱的有效期
+     */
+    public static final int VERIFYEMAIL_VAILDATE_DAY = 5;
 }

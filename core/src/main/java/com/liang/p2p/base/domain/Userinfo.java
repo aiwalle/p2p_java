@@ -15,6 +15,7 @@ public class Userinfo extends BaseDomain {
     private String realName;
     private String idNumber;
     private String phoneNumber;
+    private String email;
     private SystemDictionaryItem incomeGrade;  // 收入等级
     private SystemDictionaryItem marriage;     // 婚姻状况
     private SystemDictionaryItem kidCount;     // 小孩个数

@@ -34,6 +34,12 @@ public class PersonalController {
         return "personal";
     }
 
+    /**
+     * 绑定手机
+     * @param phoneNumber
+     * @param verifyCode
+     * @return
+     */
     @RequireLogin
     @RequestMapping("bindPhone")
     @ResponseBody
@@ -49,5 +55,42 @@ public class PersonalController {
     }
 
 
+    /**
+     * 发送邮件
+     * @param email
+     * @return
+     */
+    @RequireLogin
+    @RequestMapping("sendEmail")
+    @ResponseBody
+    public JSONResult sendEmail(String email) {
+        JSONResult jsonResult = new JSONResult();
+        try {
+            userinfoService.sendVerifyEmail(email);
+        } catch (RuntimeException e) {
+            jsonResult.setMsg(e.getMessage());
+            jsonResult.setSuccess(false);
+        }
+        return jsonResult;
+    }
+
+
+
+    /**
+     * 绑定邮箱
+     * @param key
+     * @return
+     */
+    @RequestMapping("bindEmail")
+    public String bindEmail(String key, Model model) {
+        try {
+            this.userinfoService.bindEmail(key);
+            model.addAttribute("success", true);
+        } catch (RuntimeException e) {
+            model.addAttribute("success", false);
+            model.addAttribute("msg", e.getMessage());
+        }
+        return "checkmail_result";
+    }
 
 }

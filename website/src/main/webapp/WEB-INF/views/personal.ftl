@@ -239,7 +239,7 @@
 			</div>
 		</div>		
 		
-		<#--<#if !userinfo.isBindPhone>-->
+		<#if !userinfo.isBindPhone>
 		<div class="modal fade" id="bindPhoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -271,10 +271,10 @@
 		    </div>
 		  </div>
 		</div>
-		<#--</#if>-->
+		</#if>
 		
 		
-		<#--<#if !userinfo.isBindEmail>-->
+		<#if !userinfo.isBindEmail>
 		<div class="modal fade" id="bindEmailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -299,7 +299,7 @@
 		    </div>
 		  </div>
 		</div>
-		<#--</#if>-->
+		</#if>
 		
 		
 		<#include "common/footer-tpl.ftl" />
