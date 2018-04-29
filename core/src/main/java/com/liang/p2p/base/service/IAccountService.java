@@ -17,4 +17,10 @@ public interface IAccountService {
     void add(Account account);
 
     Account get(Long id);
+
+    /**
+     * 得到当前登录用户对应的账户信息
+     * @return
+     */
+    Account getCurrent();
 }

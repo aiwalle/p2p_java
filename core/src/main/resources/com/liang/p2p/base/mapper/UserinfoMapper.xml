@@ -10,6 +10,7 @@
     <result column="idNumber" property="idNumber" jdbcType="VARCHAR" />
     <result column="phoneNumber" property="phoneNumber" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="score" property="score" jdbcType="INTEGER" />
 
     <association property="incomeGrade" javaType="SystemDictionaryItem" column="incomeGrade_id" select="com.liang.p2p.base.mapper.SystemDictionaryItemMapper.selectByPrimaryKey" />
     <association property="marriage" javaType="SystemDictionaryItem" column="marriage_id" select="com.liang.p2p.base.mapper.SystemDictionaryItemMapper.selectByPrimaryKey" />
@@ -20,11 +21,11 @@
   </resultMap>
 
   <insert id="insert" >
-    insert into `userinfo` (id,version, bitState, realName, email,
+    insert into `userinfo` (id,version, bitState, realName, email, score,
       idNumber, phoneNumber, incomeGrade_id, 
       marriage_id, kidCount_id, educationBackground_id, 
       houseCondition_id)
-    values (#{id}, 0, #{bitState,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+    values (#{id}, 0, #{bitState,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{score},
       #{idNumber,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{incomeGrade.id,jdbcType=BIGINT},
       #{marriage.id,jdbcType=BIGINT}, #{kidCount.id,jdbcType=BIGINT}, #{educationBackground.id,jdbcType=BIGINT},
       #{houseCondition.id,jdbcType=BIGINT})
@@ -36,6 +37,7 @@
       bitState = #{bitState,jdbcType=BIGINT},
       realName = #{realName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
+      score = #{score},
       idNumber = #{idNumber,jdbcType=VARCHAR},
       phoneNumber = #{phoneNumber,jdbcType=VARCHAR},
       incomeGrade_id = #{incomeGrade.id,jdbcType=BIGINT},
@@ -47,7 +49,7 @@
   </update>
 
   <sql id="base_column">
-    id, version, bitState, realName, email, idNumber, phoneNumber, incomeGrade_id, marriage_id,
+    id, version, bitState, realName, email, idNumber, phoneNumber, incomeGrade_id, marriage_id, score,
     kidCount_id, educationBackground_id, houseCondition_id
   </sql>
 

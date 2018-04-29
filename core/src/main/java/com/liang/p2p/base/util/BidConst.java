@@ -48,4 +48,10 @@ public class BidConst {
      * 验证邮箱的有效期
      */
     public static final int VERIFYEMAIL_VAILDATE_DAY = 5;
+
+
+    /**
+     * 要能借款，需要达到的最低风控分数
+     */
+    public static final int BASE_BORROW_SCORE = 30;
 }
