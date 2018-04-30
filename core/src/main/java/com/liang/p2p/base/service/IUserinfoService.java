@@ -48,4 +48,10 @@ public interface IUserinfoService {
      * @param uuid
      */
     void bindEmail(String uuid);
+
+    /**
+     * 只是用于更新用户基本数据，这个方法可以防止从前台往后台传递数据的时候，数据的丢失
+     * @param userinfo
+     */
+    void updateBasicInfo(Userinfo userinfo);
 }

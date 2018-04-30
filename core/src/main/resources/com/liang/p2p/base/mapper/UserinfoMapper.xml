@@ -11,6 +11,7 @@
     <result column="phoneNumber" property="phoneNumber" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="score" property="score" jdbcType="INTEGER" />
+    <result column="realAuthId" property="realAuthId" jdbcType="BIGINT" />
 
     <association property="incomeGrade" javaType="SystemDictionaryItem" column="incomeGrade_id" select="com.liang.p2p.base.mapper.SystemDictionaryItemMapper.selectByPrimaryKey" />
     <association property="marriage" javaType="SystemDictionaryItem" column="marriage_id" select="com.liang.p2p.base.mapper.SystemDictionaryItemMapper.selectByPrimaryKey" />
@@ -21,11 +22,11 @@
   </resultMap>
 
   <insert id="insert" >
-    insert into `userinfo` (id,version, bitState, realName, email, score,
+    insert into `userinfo` (id,version, bitState, realName, email, score, realAuthId,
       idNumber, phoneNumber, incomeGrade_id, 
       marriage_id, kidCount_id, educationBackground_id, 
       houseCondition_id)
-    values (#{id}, 0, #{bitState,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{score},
+    values (#{id}, 0, #{bitState,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{score}, #{realAuthId},
       #{idNumber,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{incomeGrade.id,jdbcType=BIGINT},
       #{marriage.id,jdbcType=BIGINT}, #{kidCount.id,jdbcType=BIGINT}, #{educationBackground.id,jdbcType=BIGINT},
       #{houseCondition.id,jdbcType=BIGINT})
@@ -38,6 +39,7 @@
       realName = #{realName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       score = #{score},
+      realAuthId = #{realAuthId},
       idNumber = #{idNumber,jdbcType=VARCHAR},
       phoneNumber = #{phoneNumber,jdbcType=VARCHAR},
       incomeGrade_id = #{incomeGrade.id,jdbcType=BIGINT},
@@ -49,7 +51,7 @@
   </update>
 
   <sql id="base_column">
-    id, version, bitState, realName, email, idNumber, phoneNumber, incomeGrade_id, marriage_id, score,
+    id, version, bitState, realName, email, idNumber, phoneNumber, incomeGrade_id, marriage_id, score, realAuthId,
     kidCount_id, educationBackground_id, houseCondition_id
   </sql>
 

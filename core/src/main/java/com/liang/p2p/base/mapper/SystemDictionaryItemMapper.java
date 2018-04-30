@@ -21,4 +21,6 @@ public interface SystemDictionaryItemMapper {
      */
     int queryForCount(SystemDictionaryQueryObject qo);
     List<SystemDictionaryItem> query(SystemDictionaryQueryObject qo);
+
+    List<SystemDictionaryItem> listByParentSn(String sn);
 }

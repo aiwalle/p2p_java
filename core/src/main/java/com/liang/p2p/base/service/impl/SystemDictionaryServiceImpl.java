@@ -61,4 +61,8 @@ public class SystemDictionaryServiceImpl implements ISystemDictionaryService {
             systemDictionaryItemMapper.insert(item);
         }
     }
+
+    public List<SystemDictionaryItem> listByParentSn(String sn) {
+        return systemDictionaryItemMapper.listByParentSn(sn);
+    }
 }

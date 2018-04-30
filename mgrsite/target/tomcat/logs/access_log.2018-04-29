@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:04:38 +0800] "GET /systemDictionary_list.do HTTP/1.1" 200 8054 http-bio-8081-exec-3 447
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:04:39 +0800] "GET /js/bootstrap-3.3.2-dist/css/bootstrap.css.map HTTP/1.1" 304 - http-bio-8081-exec-5 4
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:05:48 +0800] "POST /login.do HTTP/1.1" 200 38 http-bio-8081-exec-1 226
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:05:49 +0800] "GET /index.do HTTP/1.1" 200 3794 http-bio-8081-exec-7 391
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:05:52 +0800] "GET /systemDictionary_list.do HTTP/1.1" 200 9383 http-bio-8081-exec-8 752
+0:0:0:0:0:0:0:1 - - [29/Apr/2018:10:05:53 +0800] "GET /js/bootstrap-3.3.2-dist/css/bootstrap.css.map HTTP/1.1" 304 - http-bio-8081-exec-10 15

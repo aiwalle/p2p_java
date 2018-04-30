@@ -43,4 +43,11 @@ public interface ISystemDictionaryService {
      * @param item
      */
     void saveOrUpdateItem(SystemDictionaryItem item);
+
+    /**
+     * 根据数据字典分类sn查询明细
+     * @param sn
+     * @return
+     */
+    List<SystemDictionaryItem> listByParentSn(String sn);
 }

@@ -126,5 +126,20 @@ public class UserinfoServiceImpl implements IUserinfoService {
         throw new RuntimeException("绑定邮箱失败");
     }
 
+    public void updateBasicInfo(Userinfo userinfo) {
+        Userinfo old = getCurrent();
+        old.setEducationBackground(userinfo.getEducationBackground());
+        old.setHouseCondition(userinfo.getHouseCondition());
+        old.setIncomeGrade(userinfo.getIncomeGrade());
+        old.setKidCount(userinfo.getKidCount());
+        old.setMarriage(userinfo.getMarriage());
+
+        // 判断用户状态码
+        if (!old.getIsBasicInfo()) {
+            old.addState(BitStatesUtils.OP_BASIC_INFO);
+        }
+        update(old);
+    }
+
 
 }

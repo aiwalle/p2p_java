@@ -1,4 +1,5 @@
 com/liang/p2p/base/util/LoginCheckInterceptor.class
+com/liang/p2p/base/controller/BasicInfoController.class
 com/liang/p2p/base/util/RequireLogin.class
 com/liang/p2p/base/controller/RegisterController.class
 com/liang/p2p/base/controller/PersonalController.class

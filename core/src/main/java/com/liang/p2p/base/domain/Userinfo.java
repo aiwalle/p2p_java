@@ -18,6 +18,8 @@ public class Userinfo extends BaseDomain {
     private String email;
     private int score; //风控累积分数
 
+    private Long realAuthId;   // 该用户对应的实名认证对象id
+
     private SystemDictionaryItem incomeGrade;  // 收入等级
     private SystemDictionaryItem marriage;     // 婚姻状况
     private SystemDictionaryItem kidCount;     // 小孩个数
