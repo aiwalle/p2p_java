@@ -1,4 +1,6 @@
-com/liang/mgrsite/base/IplogController.class
 com/liang/mgrsite/base/SystemDictionaryController.class
-com/liang/mgrsite/base/LoginController.class
 com/liang/mgrsite/listener/InitAdminListener.class
+com/liang/mgrsite/base/RealAuthController.class
+com/liang/mgrsite/base/IplogController.class
+com/liang/mgrsite/base/VedioAuthController.class
+com/liang/mgrsite/base/LoginController.class

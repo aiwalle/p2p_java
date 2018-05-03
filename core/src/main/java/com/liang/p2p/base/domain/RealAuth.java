@@ -1,24 +1,22 @@
 package com.liang.p2p.base.domain;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by liang on 2018/4/29.
  */
 @Setter@Getter
-public class RealAuth extends BaseDomain {
+public class RealAuth extends BaseAuditDomain {
 
 
     public static final int SEX_MALE = 0;
     public static final int SEX_FEMALE = 1;
-
-    public static final int STATE_NORMAL = 0;   // 正常
-    public static final int STATE_AUDIT = 1;    // 审核通过
-    public static final int STATE_REJECT = 2;   // 拒绝
-
 
 
     private String realName;
@@ -29,12 +27,26 @@ public class RealAuth extends BaseDomain {
     private String image1;  // 身份证正面图片地址
     private String image2;  // 身份证背面图片地址
 
-    private int state;  // 状态
-    private Logininfo applier; // 申请人
-    private Logininfo auditor; // 审核人
-    private String remark; // 审核备注
-    private Date applyTime;  // 申请时间
-    private Date auditTime;  // 审核时间
+
+
+    public String getSexDisplay() {
+        return sex == SEX_MALE ? "男" : "女";
+    }
+
+
+    public String getJsonString() {
+        Map<String, Object> json = new HashMap<>();
+        json.put("id", id);
+        json.put("applier", this.applier.getUsername());
+        json.put("realName", realName);
+        json.put("idNumber", idNumber);
+        json.put("sex", getSexDisplay());
+        json.put("bornDate", bornDate);
+        json.put("address", address);
+        json.put("image1", image1);
+        json.put("image2", image2);
+        return JSONObject.toJSONString(json);
+    }
 
 
 

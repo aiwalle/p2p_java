@@ -2,6 +2,9 @@ package com.liang.p2p.base.service;
 
 import com.liang.p2p.base.domain.Userinfo;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by liang on 2018/4/24.
  */
@@ -54,4 +57,13 @@ public interface IUserinfoService {
      * @param userinfo
      */
     void updateBasicInfo(Userinfo userinfo);
+
+
+    /**
+     * 用于用户的autoComplate
+     * 返回的Map：{id:logininfoId,username:username}
+     * @param keyword
+     * @return
+     */
+    List<Map<String,Object>> autoComplate(String keyword);
 }

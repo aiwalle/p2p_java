@@ -1,4 +1,4 @@
-package com.xmg.p2p.base.util;
+package com.liang.p2p.base.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,10 +31,8 @@ public class UploadUtil {
 		try {
 			File targetFile = new File(basePath, fileName);
 			FileUtils.writeByteArrayToFile(targetFile, file.getBytes());
-			
-			//把文件同步到公共文件夹
-			File publicFile=new File(BidConst.PUBLIC_IMG_SHARE_PATH,fileName);
-			FileUtils.writeByteArrayToFile(publicFile, file.getBytes());
+
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

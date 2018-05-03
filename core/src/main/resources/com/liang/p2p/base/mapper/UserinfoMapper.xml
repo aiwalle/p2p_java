@@ -60,4 +60,10 @@
     from `userinfo`
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+
+  <select id="autoComplate" resultType="hashmap">
+    select id,username
+    FROM  logininfo WHERE username LIKE concat(#{keyword}, '%')
+  </select>
 </mapper>

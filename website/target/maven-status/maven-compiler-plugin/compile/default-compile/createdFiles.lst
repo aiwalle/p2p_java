@@ -4,5 +4,7 @@ com/liang/p2p/base/util/RequireLogin.class
 com/liang/p2p/base/controller/RegisterController.class
 com/liang/p2p/base/controller/PersonalController.class
 com/liang/p2p/base/controller/VerifyCodeController.class
+com/liang/p2p/base/controller/RealAuthController.class
 com/liang/p2p/base/controller/BorrowController.class
+com/liang/p2p/base/util/UploadUtil.class
 com/liang/p2p/base/controller/IplogController.class
