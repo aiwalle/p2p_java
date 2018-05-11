@@ -14,7 +14,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 判断登录逻辑
+        // 判断登录逻辑，这里的示例的类型在不同的情况下是不同的
         if (handler instanceof HandlerMethod) {
             HandlerMethod hm = (HandlerMethod) handler;
             RequireLogin requireLogin = hm.getMethodAnnotation(RequireLogin.class);
