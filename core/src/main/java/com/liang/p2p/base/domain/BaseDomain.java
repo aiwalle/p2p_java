@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-abstract class BaseDomain {
+abstract public class BaseDomain {
 
     protected Long id;
 }

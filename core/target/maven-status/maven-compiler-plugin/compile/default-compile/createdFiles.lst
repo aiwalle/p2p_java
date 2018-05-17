@@ -1,9 +1,11 @@
 com/liang/p2p/base/util/DateUtil.class
+com/liang/p2p/business/service/IBidRequestService.class
 com/liang/p2p/base/util/BitStatesUtils.class
 com/liang/p2p/base/util/UserContext.class
 com/liang/p2p/base/domain/Account.class
 com/liang/p2p/base/vo/VerifyCodeVO.class
 com/liang/p2p/base/mapper/SystemDictionaryMapper.class
+com/liang/p2p/business/domain/Bid.class
 com/liang/p2p/base/service/IIplogService.class
 com/liang/p2p/base/query/QueryObject.class
 com/liang/p2p/base/service/impl/MailServiceImpl.class
@@ -14,9 +16,11 @@ com/liang/p2p/base/domain/BaseAuditDomain.class
 com/liang/p2p/base/service/IAccountService.class
 com/liang/p2p/base/service/impl/UserFileServiceImpl.class
 com/liang/p2p/base/service/IMailService.class
+com/liang/p2p/business/domain/BidRequest.class
 com/liang/p2p/base/domain/MailVerify.class
 com/liang/p2p/base/query/RealAuthQueryObject.class
 com/liang/p2p/base/util/JSONResult.class
+com/liang/p2p/business/service/impl/BidRequestServiceImpl.class
 com/liang/p2p/base/service/IVerifyCodeService.class
 com/liang/p2p/base/query/IplogQueryObject.class
 com/liang/p2p/base/domain/BaseDomain.class
@@ -27,6 +31,7 @@ com/liang/p2p/base/domain/Logininfo.class
 com/liang/p2p/base/domain/Userinfo.class
 com/liang/p2p/base/query/PageResult.class
 com/liang/p2p/base/mapper/SystemDictionaryItemMapper.class
+com/liang/p2p/base/query/UserFileQueryObject.class
 com/liang/p2p/base/query/SystemDictionaryQueryObject.class
 com/liang/p2p/base/mapper/VedioAuthMapper.class
 com/liang/p2p/base/service/IUserFileService.class
@@ -38,6 +43,7 @@ com/liang/p2p/base/domain/SystemDictionaryItem.class
 com/liang/p2p/base/service/impl/IplogServiceImpl.class
 com/liang/p2p/base/service/impl/RealAuthServiceImpl.class
 com/liang/p2p/base/service/IUserinfoService.class
+com/liang/p2p/business/mapper/BidRequestMapper.class
 com/liang/p2p/base/mapper/IplogMapper.class
 com/liang/p2p/base/service/IVedioAuthService.class
 com/liang/p2p/base/domain/RealAuth.class
@@ -50,6 +56,7 @@ com/liang/p2p/base/service/impl/VerifyCodeServiceImpl.class
 com/liang/p2p/base/service/ILogininfoService.class
 com/liang/p2p/base/mapper/LogininfoMapper.class
 com/liang/p2p/base/domain/UserFile.class
+com/liang/p2p/business/mapper/BidMapper.class
 com/liang/p2p/base/domain/Iplog.class
 com/liang/p2p/base/mapper/UserFileMapper.class
 com/liang/p2p/base/util/MD5.class

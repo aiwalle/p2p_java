@@ -3,6 +3,7 @@
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/controller/RegisterController.java
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/controller/IplogController.java
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/util/LoginCheckInterceptor.java
+/Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/controller/UserFileController.java
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/util/RequireLogin.java
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/controller/BorrowController.java
 /Users/liang/Documents/Project/p2p_java/website/src/main/java/com/liang/p2p/base/controller/RealAuthController.java

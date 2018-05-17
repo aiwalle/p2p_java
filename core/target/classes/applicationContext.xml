@@ -30,7 +30,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:myBatis-config.xml"/>
-		<property name="typeAliasesPackage" value="com.liang.p2p.base.domain"/>
+		<property name="typeAliasesPackage" value="com.liang.p2p"/>
 		<property name="mapperLocations" value="classpath:com/liang/p2p/*/mapper/*Mapper.xml"/>
 	</bean>
 	
@@ -59,6 +59,6 @@
 	 -->
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.liang.p2p.base.mapper"/>
+		<property name="basePackage" value="com.liang.p2p.base.mapper,com.liang.p2p.business.mapper"/>
 	</bean>
 </beans>

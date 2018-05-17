@@ -10,7 +10,7 @@ import java.util.Date;
  * Created by liang on 2018/5/3.
  */
 @Getter@Setter
-abstract class BaseAuditDomain extends BaseDomain {
+abstract public class BaseAuditDomain extends BaseDomain {
 
 
     public static final int STATE_NORMAL = 0;   // 正常

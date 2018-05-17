@@ -4,3 +4,4 @@ com/liang/mgrsite/base/RealAuthController.class
 com/liang/mgrsite/base/IplogController.class
 com/liang/mgrsite/base/VedioAuthController.class
 com/liang/mgrsite/base/LoginController.class
+com/liang/mgrsite/base/UserFileController.class

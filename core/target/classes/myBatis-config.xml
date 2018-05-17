@@ -9,4 +9,15 @@
 		<setting name="aggressiveLazyLoading" value="false"/>
 		<setting name="lazyLoadTriggerMethods" value="clone"/>
 	</settings>
+
+	<!--当我们需要配置多个环境的时候，需要使用到这个配置参数，例如开发环境，测试环境，生产环境-->
+	<!--这里的配置好了以后，需要在applicationContext.xml中来选择对应的环境来方便我们的开发-->
+	<!--具体的配置的地点为：<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">中-->
+
+	<!--<environments default="">-->
+		<!--<environment id="">-->
+			<!--<transactionManager type=""></transactionManager>-->
+			<!--<dataSource type=""></dataSource>-->
+		<!--</environment>-->
+	<!--</environments>-->
 </configuration>

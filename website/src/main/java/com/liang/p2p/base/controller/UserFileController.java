@@ -38,12 +38,21 @@ public class UserFileController {
 
     @RequestMapping("userFile")
     public String userFile(Model model, HttpServletRequest request) {
-        model.addAttribute("sessionid", request.getSession().getId());
-        List<UserFile> userFiles = userFileService.listUnTypeFiles(UserContext.getCurrent().getId());
-        model.addAttribute("userFiles", userFiles);
-        model.addAttribute("fileTypes", systemDictionaryService.listByParentSn("userFileType"));
-//        return "userFiles";
-        return "userFiles_commit";
+        List<UserFile> userFiles = userFileService.listFilesByHasType(UserContext.getCurrent().getId(), false);
+
+        // 如果有未选择的用户文件类型，设置数据字典，并前往userFiles_commit
+        if (userFiles.size() > 0) {
+            model.addAttribute("fileTypes", systemDictionaryService.listByParentSn("userFileType"));
+            model.addAttribute("userFiles", userFiles);
+            return "userFiles_commit";
+        } else {
+            // 选择所有该用户的风控文件
+            // 往userfile
+            model.addAttribute("sessionid", request.getSession().getId());
+            userFiles = userFileService.listFilesByHasType(UserContext.getCurrent().getId(), true);
+            model.addAttribute("userFiles", userFiles);
+            return "userFiles";
+        }
     }
 
 
