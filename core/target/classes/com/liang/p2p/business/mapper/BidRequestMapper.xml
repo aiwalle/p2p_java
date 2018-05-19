@@ -28,8 +28,8 @@
       <result column="username" property="username"/>
     </association>
 
-    <collection property="bids" column="id" ofType="com.liang.p2p.business.domain.Bid" select="com.liang.p2p.business.mapper.BidMapper.selectByBidRequest"/>
-    
+    <!--<collection property="bids" column="id" ofType="com.liang.p2p.business.domain.Bid" select="com.liang.p2p.business.mapper.BidMapper.selectByBidRequest"/>-->
+    <collection property="bids" column="id" ofType="com.liang.p2p.business.domain.Bid" select="com.liang.p2p.business.mapper.BidMapper.selectByBidRequest" />
   </resultMap>
 
 
@@ -76,13 +76,51 @@
   </update>
 
 
+  <sql id="base_column">
+    b.id, b.version, b.bidRequestType, b.bidRequestState, b.bidRequestAmount, b.currentRate,
+    b.monthes2Return, b.bidCount, b.totalRewardAmount, b.currentSum, b.title, b.description, b.note,
+    b.disableDate, b.disableDays, b.minBidAmount, b.applyTime, b.publishTime, b.returnType,
+    l.id as l_id,l.username as l_username
+  </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
-    select b.id, b.version, b.bidRequestType, b.bidRequestState, b.bidRequestAmount, b.currentRate,
-      b.monthes2Return, b.bidCount, b.totalRewardAmount, b.currentSum, b.title, b.description, b.note,
-      b.disableDate, b.disableDays, b.minBidAmount, b.applyTime, b.publishTime, b.returnType,
-      l.id as l_id, l.username as l_username
+    select <include refid="base_column" />
     from `bidrequest` b JOIN logininfo l on b.createUser_id = l.id
     where b.id = #{id,jdbcType=BIGINT}
+  </select>
+
+
+
+  <sql id="base_where">
+    <where>
+      <if test="bidRequestState>-1">
+        AND b.bidRequestState = #{bidRequestState}
+      </if>
+      <!--<if test="bidRequestStates!=null">-->
+        <!--AND b.bidRequestState in-->
+        <!--<foreach collection="bidRequestStates" item="state" open="(" close=")" separator=",">-->
+          <!--#{state}-->
+        <!--</foreach>-->
+      <!--</if>-->
+    </where>
+  </sql>
+
+  <select id="queryForCount" resultType="int">
+    SELECT count(b.id)
+    FROM bidrequest b
+    <include refid="base_where" />
+  </select>
+
+  <select id="query" resultMap="BaseResultMap">
+    SELECT <include refid="base_column" />
+    FROM `bidrequest` b JOIN logininfo l on  b.createUser_id = l.id
+    <include refid="base_where" />
+    <!--<if test="orderBy!=null">-->
+      <!--ORDER BY ${orderBy} ${orderType}-->
+    <!--</if>-->
+    <!--<if test="pageSize>0">-->
+      <!--LIMIT #{start},#{pageSize}-->
+    <!--</if>-->
   </select>
 
 </mapper>

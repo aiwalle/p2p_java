@@ -31,16 +31,18 @@
     l.id as l_id, l.username as l_username
   </sql>
 
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
     select <include refid="base_column"/>
     from `bid` b join logininfo l on b.bidUser_id = l.id
     where b.id = #{id,jdbcType=BIGINT}
   </select>
 
+
   <select id="selectByBidRequest" resultMap="BaseResultMap">
     SELECT <include refid="base_column"/>
-    from `bid` b join logininfo l on b.bidUser_id = l.id
-    WHERE bidRequest_id = ${bidRequestId}
+    FROM `bid` b join logininfo l on b.bidUser_id = l.id
+    WHERE bidRequest_id = #{bidrequestid}
   </select>
 
 </mapper>

@@ -6,6 +6,7 @@ com/liang/p2p/base/domain/Account.class
 com/liang/p2p/base/vo/VerifyCodeVO.class
 com/liang/p2p/base/mapper/SystemDictionaryMapper.class
 com/liang/p2p/business/domain/Bid.class
+com/liang/p2p/business/util/CalculatetUtil.class
 com/liang/p2p/base/service/IIplogService.class
 com/liang/p2p/base/query/QueryObject.class
 com/liang/p2p/base/service/impl/MailServiceImpl.class
@@ -13,6 +14,7 @@ com/liang/p2p/base/domain/SystemDictionary.class
 com/liang/p2p/base/query/AuditQueryObject.class
 com/liang/p2p/base/domain/VedioAuth.class
 com/liang/p2p/base/domain/BaseAuditDomain.class
+com/liang/p2p/business/util/DecimalFormatUtil.class
 com/liang/p2p/base/service/IAccountService.class
 com/liang/p2p/base/service/impl/UserFileServiceImpl.class
 com/liang/p2p/base/service/IMailService.class
@@ -35,11 +37,13 @@ com/liang/p2p/base/query/UserFileQueryObject.class
 com/liang/p2p/base/query/SystemDictionaryQueryObject.class
 com/liang/p2p/base/mapper/VedioAuthMapper.class
 com/liang/p2p/base/service/IUserFileService.class
+com/liang/p2p/business/domain/BidRequestAuditHistory.class
 com/liang/p2p/base/mapper/UserinfoMapper.class
 com/liang/p2p/base/service/impl/UserinfoServiceImpl.class
 com/liang/p2p/base/service/impl/VedioAuthServiceImpl.class
 com/liang/p2p/base/service/ISystemDictionaryService.class
 com/liang/p2p/base/domain/SystemDictionaryItem.class
+com/liang/p2p/business/query/BidRequestQueryObject.class
 com/liang/p2p/base/service/impl/IplogServiceImpl.class
 com/liang/p2p/base/service/impl/RealAuthServiceImpl.class
 com/liang/p2p/base/service/IUserinfoService.class
@@ -54,6 +58,7 @@ com/liang/p2p/base/service/impl/LogininfoServiceImpl.class
 com/liang/p2p/base/mapper/AccountMapper.class
 com/liang/p2p/base/service/impl/VerifyCodeServiceImpl.class
 com/liang/p2p/base/service/ILogininfoService.class
+com/liang/p2p/business/mapper/BidRequestAuditHistoryMapper.class
 com/liang/p2p/base/mapper/LogininfoMapper.class
 com/liang/p2p/base/domain/UserFile.class
 com/liang/p2p/business/mapper/BidMapper.class

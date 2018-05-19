@@ -15,10 +15,12 @@
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/BaseAuditDomain.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/LogininfoMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/RealAuthMapper.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/query/BidRequestQueryObject.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/UserContext.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/SystemDictionaryMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/Logininfo.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IMailService.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/mapper/BidRequestAuditHistoryMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IVedioAuthService.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/JSONResult.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/query/VedioAuthQueryObject.java
@@ -31,12 +33,14 @@
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/query/UserFileQueryObject.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/VedioAuthMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/query/QueryObject.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/util/CalculatetUtil.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/impl/VedioAuthServiceImpl.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/mapper/BidMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/query/RealAuthQueryObject.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/MailVerify.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IIplogService.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/IVerifyCodeService.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/util/DecimalFormatUtil.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/Userinfo.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/service/impl/BidRequestServiceImpl.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/impl/AccountServiceImpl.java
@@ -47,6 +51,7 @@
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/impl/UserinfoServiceImpl.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/mapper/AccountMapper.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/util/MD5.java
+/Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/business/domain/BidRequestAuditHistory.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/UserFile.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/domain/VedioAuth.java
 /Users/liang/Documents/Project/p2p_java/core/src/main/java/com/liang/p2p/base/service/impl/VerifyCodeServiceImpl.java
