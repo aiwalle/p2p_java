@@ -19,4 +19,10 @@ public interface BidRequestMapper {
      */
     int queryForCount(BidRequestQueryObject qo);
     List<BidRequest> query(BidRequestQueryObject qo);
+
+//    /**
+//     * 列出所有的BidRequest,废弃这种查询的方式而通过queryObject来灵活查询
+//     * @return
+//     */
+//    List<BidRequest> listIndex();
 }

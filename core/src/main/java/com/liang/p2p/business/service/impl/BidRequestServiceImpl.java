@@ -7,7 +7,6 @@ import com.liang.p2p.base.service.IAccountService;
 import com.liang.p2p.base.service.IUserinfoService;
 import com.liang.p2p.base.util.BidConst;
 import com.liang.p2p.base.util.BitStatesUtils;
-import com.liang.p2p.base.util.DateUtil;
 import com.liang.p2p.base.util.UserContext;
 import com.liang.p2p.business.domain.BidRequest;
 import com.liang.p2p.business.domain.BidRequestAuditHistory;
@@ -41,6 +40,19 @@ public class BidRequestServiceImpl implements IBidRequestService {
     @Autowired
     private BidRequestAuditHistoryMapper bidRequestAuditHistoryMapper;
 
+
+    public List<BidRequest> listIndex(int size) {
+        BidRequestQueryObject qo = new BidRequestQueryObject();
+        qo.setBidRequestStates(new int[] { BidConst.BIDREQUEST_STATE_BIDDING,
+                BidConst.BIDREQUEST_STATE_PAYING_BACK,
+                BidConst.BIDREQUEST_STATE_COMPLETE_PAY_BACK });
+        qo.setPageSize(size);
+        qo.setCurrentPage(1);
+        qo.setOrderBy("bidRequestState");
+        qo.setOrderType("ASC");
+        return bidRequestMapper.query(qo);
+    }
+
     public void update(BidRequest bidRequest) {
         int ret = bidRequestMapper.updateByPrimaryKey(bidRequest);
         if (ret == 0) {
@@ -49,6 +61,13 @@ public class BidRequestServiceImpl implements IBidRequestService {
         }
     }
 
+    public BidRequest get(Long id) {
+        return bidRequestMapper.selectByPrimaryKey(id);
+    }
+
+    public List<BidRequestAuditHistory> listAuditHistoryByBidRequest(Long id) {
+        return bidRequestAuditHistoryMapper.listByBidRequest(id);
+    }
 
     public PageResult query(BidRequestQueryObject qo) {
         int count = bidRequestMapper.queryForCount(qo);

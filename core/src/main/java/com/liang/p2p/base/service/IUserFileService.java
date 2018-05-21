@@ -42,6 +42,9 @@ public interface IUserFileService {
      */
     PageResult query(UserFileQueryObject queryObject);
 
+
+    List<UserFile> queryForList(UserFileQueryObject qo);
+
     /**
      * 审核
      * @param id

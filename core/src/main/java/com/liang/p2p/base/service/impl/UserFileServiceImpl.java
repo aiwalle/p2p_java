@@ -60,6 +60,9 @@ public class UserFileServiceImpl implements IUserFileService {
         return PageResult.empty(queryObject.getPageSize());
     }
 
+    public List<UserFile> queryForList(UserFileQueryObject qo) {
+        return userFileMapper.query(qo);
+    }
 
     public void audit(Long id, int score, String remark, int state) {
         // 找到userfile,确定userfile的状态为未审核

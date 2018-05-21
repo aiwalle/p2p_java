@@ -128,6 +128,9 @@
             <if test="state>-1">
                 AND f.state = #{state}
             </if>
+            <if test="applierId!=null">
+                AND f.applier_id = #{applierId}
+            </if>
             and f.fileType_id is not null
         </where>
     </sql>
@@ -146,7 +149,9 @@
         from userfile f join logininfo ap on f.applier_id = ap.id LEFT JOIN logininfo au on f.auditor_id = au.id
         JOIN SystemDictionaryItem sd on f.fileType_id = sd.id
         <include refid="base_where"/>
-        LIMIT #{start},#{pageSize}
+        <if test="pageSize>0">
+            LIMIT #{start},#{pageSize}
+        </if>
     </select>
 
 </mapper>

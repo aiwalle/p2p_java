@@ -1,7 +1,11 @@
 package com.liang.p2p.base.controller;
 
 import com.liang.p2p.base.domain.Logininfo;
+import com.liang.p2p.base.domain.Userinfo;
+import com.liang.p2p.base.query.UserFileQueryObject;
 import com.liang.p2p.base.service.IAccountService;
+import com.liang.p2p.base.service.IRealAuthService;
+import com.liang.p2p.base.service.IUserFileService;
 import com.liang.p2p.base.service.IUserinfoService;
 import com.liang.p2p.base.util.BidConst;
 import com.liang.p2p.base.util.UserContext;
@@ -28,6 +32,12 @@ public class BorrowController {
 
     @Autowired
     private IBidRequestService bidRequestService;
+
+    @Autowired
+    private IRealAuthService realAuthService;
+
+    @Autowired
+    private IUserFileService userFileService;
 
     /**
      * 导向到借款首页
@@ -71,10 +81,50 @@ public class BorrowController {
     @RequestMapping("borrow_apply")
     public String borrowApply(BidRequest bidRequest) {
 //        boolean isSuccess =
-
                 bidRequestService.apply(bidRequest);
-
         return "redirect:/borrowInfo.do";
+    }
+
+    /**
+     * 前端的借款明细
+     */
+    @RequestMapping("borrow_info")
+    public String borrowInfoDetail(Long id, Model model) {
+        // bidRequest;
+        BidRequest bidRequest = bidRequestService.get(id);
+        if (bidRequest != null) {
+            // userInfo
+            Userinfo applier = userinfoService.get(bidRequest
+                    .getCreateUser().getId());
+            // realAuth:借款人实名认证信息
+            model.addAttribute("realAuth",
+                    realAuthService.get(applier.getRealAuthId()));
+            // userFiles:借款人风控材料
+            UserFileQueryObject qo = new UserFileQueryObject();
+            qo.setApplierId(applier.getId());
+            qo.setPageSize(-1);
+            qo.setCurrentPage(1);
+            model.addAttribute("userFiles",
+                    userFileService.queryForList(qo));
+
+            model.addAttribute("bidRequest", bidRequest);
+            model.addAttribute("userInfo", applier);
+
+            if (UserContext.getCurrent() != null) {
+                // self:当前用户是否是借款人自己
+                if (UserContext.getCurrent().getId().equals(applier.getId())) {
+                    model.addAttribute("self", true);
+                } else {
+                    // account
+                    model.addAttribute("self", false);
+                    model.addAttribute("account",
+                            this.accountService.getCurrent());
+                }
+            } else {
+                model.addAttribute("self", false);
+            }
+        }
+        return "borrow_info";
     }
 
 }
